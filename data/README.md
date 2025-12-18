@@ -2,7 +2,7 @@
 
 - CHM13 reference: MEI_Callset_T2T-CHM13.ALL.20241211.fasta.gz
 - Hg38 reference: MEI_Callset_GRCh38.ALL.20241211.fasta.gz
-- Any TE insertion sequence is acceptable , as long as the sequence ID follows the naming format CHR-POS-ID, e.g., chr1-683234-AluSp
+- Any TE insertion sequence is acceptable , as long as the sequence ID follows the naming format CHR-POS-ID, e.g., chr1-683234-AluSp#SINE/Alu
 
 ### Known pTE deletion can be downloaded from:
 - UCSC annotation: https://genome.ucsc.edu/cgi-bin/hgTables
