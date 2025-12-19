@@ -112,6 +112,9 @@ Automatically generate pTE positions from RepeatMasker or UCSC repeat annotation
 - `CHR` : Chromosome used to simulate pTE  
 
 **Optional arguments:**  
+- `DELlen` : A minimum length of known TE deletions to be considered for simulating pTE deletions (default: 100 bp)
+- `nMIN` : A minimum number of TE deletions for each TE super family to be simulated (default: 0)
+- `nSV` : Number of background structural variants to simulate (default: 0)
 - `outprefix` : Output prefix for BED file (default: real)  
 - `nTE` : Number of pTE insertions (default: all TEs)
 - `TEtype` : Which TE super families to be extracted from the TE deletion file (default: Alu, L1, and SVA). Specify the TE type by `--TEtype Alu --TEtype L1`
@@ -127,9 +130,6 @@ Generate pTE position from Pangenome graph.
 - `CHR` : Chromosome used to simulate pTE  
 
 **Optional arguments:**  
-- `DELlen` : A minimum length of known TE deletions to be considered for simulating pTE deletions (default: 100 bp)
-- `nMIN` : A minimum number of TE deletions for each TE super family to be simulated (default: 0)
-- `nSV` : Number of background structural variants to simulate (default: 0)
 - `outprefix` : Output prefix for BED file (default: TEpan)
 - `nTE` : Number of pTE insertions (default: all TEs)
 - `minLen` : Minimum length of structural variants to consider (default: 250)  
