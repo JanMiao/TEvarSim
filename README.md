@@ -41,7 +41,7 @@ tevarsim TErandom --consensus TEconsensus.fa --knownDEL rmsk.txt --CHR chr21 --n
 
 **3. Simulate 10 pTE from pangenome graph**
 ```bash
-tevarsim TErandom --gfa hprc-v1.0-minigraph-grch38.gfa.gz –lib Homo_sapiens_DFAM.fa  --CHR chr21 --nTE 10
+tevarsim TEpan --gfa hprc-v1.0-minigraph-grch38.gfa.gz –lib Homo_sapiens_DFAM.fa  --CHR chr21 --nTE 10
 ```
 - `hprc-v1.0-minigraph-grch38.gfa.gz` is downloaded from [HPRC](https://data.humanpangenome.org/alignments)
 
