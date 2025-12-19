@@ -63,6 +63,9 @@ tevarsim Readsim --type long --genome Sim.fa --depth 10
 ```
 - `type` : short reads or long reads
 
+**6. The complete workflow** 
+- We offered the complete workflow for the short/long-read based tool benchmarking. Please see the floder `workflow`
+
 ## Flowchart
 ![flowchart](https://github.com/JanMiao/TEvarSim/blob/main/chart.png)  
 - The known TE deletion information can be obtained from [UCSC annotaion file (.txt)](https://genome.ucsc.edu/cgi-bin/hgTables) or [repeatmasker annotation (.out)  ](https://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)
