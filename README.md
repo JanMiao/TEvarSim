@@ -66,7 +66,7 @@ tevarsim Readsim --type long --genome Sim.fa --depth 10
 ## Flowchart
 ![flowchart](https://github.com/JanMiao/TEvarSim/blob/main/chart.png)  
 - The known TE deletion information can be obtained from [UCSC annotaion file (.txt)](https://genome.ucsc.edu/cgi-bin/hgTables) or [repeatmasker annotation (.out)  ](https://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html)
-- The known TE insertion position can be obtained from our pre-built dataset (data/MEI_Callset_GRCh38.ALL.20241211.fasta). Any TE insertion sequence is acceptable , as long as the sequence ID follows the naming format **CHR-POS-ID**, e.g., **chr1-683234-AluSp**
+- The known TE insertion position can be obtained from our pre-built dataset (data/MEI_Callset_GRCh38.ALL.20241211.fasta). Any TE insertion sequence is acceptable , as long as the sequence ID follows the naming format **CHR-POS-ID**, e.g., **chr1-683234-AluSp#SINE/Alu**
 
 ## Usage
 TEvarSim provides five main command-line subcommands:
@@ -78,16 +78,19 @@ tevarsim <subcommand> [options]
 Generate pTE position from known deletion sites and random TE insertion.
 
 **Required arguments:**
-- `consensus` : Path to TE consensus FASTA file
+- `consensus` : Path to the TE consensus FASTA file. The sequenceIDs in the FASTA header should be >TEname#class/superfamily, e.g., >AluY#SINE/Alu
 - `knownDEL` : Input known TE deletion file (RepeatMasker .out or UCSC .txt)
-- `nTE` : Number of polymorphic TE (pTE) insertions to simulate (default: 500)
-- `ins-ratio` : Proportion of insertion events among all simulated pTE (0-1, default: 0.4)
 - `CHR` : Chromosome to simulate TE insertions on (e.g., chr21 or 21)
   
 **Optional arguments:**
-- `num` : Number of TE sequences to generate (default: 1000)
+- `nTE` : Number of polymorphic TE (pTE) insertions to simulate (default: 100)
+- `ins-ratio` : Proportion of insertion events among all simulated pTE (0-1, default: 06)
 - `outprefix` : Output prefix for TE pool FASTA (default: TErandom)
-- `TEtype` : TEs to be extracted from the TE deletion file, with the default set as LINE, SINE, LTR, and RC. Specify the TE type by `--TEtype LINE --TEtype SINE`
+- `TEtype` : Which TE super families to be extracted from the TE deletion file (default: Alu, L1, and SVA). Specify the TE type by `--TEtype Alu --TEtype L1`
+- `DELlen` : A minimum length of known TE deletions to be considered for simulating pTE deletions (default: 100 bp)
+- `nMIN` : A minimum number of TE deletions for each TE super family to be simulated (default: 0)
+- `TEdistance` : A minimum length of distance between two TE insertions (default: 500 bp)
+- `nSV` : Number of background structural variants to simulate (default: 0)
 - `snp-rate` : SNP mutation rate per base (default: 0.02)
 - `indel-rate` : INDEL mutation rate per base (default: 0.005)
 - `indel-ins` : Proportion of indels that are insertions (default: 0.4)
@@ -111,7 +114,7 @@ Automatically generate pTE positions from RepeatMasker or UCSC repeat annotation
 **Optional arguments:**  
 - `outprefix` : Output prefix for BED file (default: real)  
 - `nTE` : Number of pTE insertions (default: all TEs)
-- `TEtype` : TEs to be extracted from the TE deletion file, with the default set as LINE, SINE, LTR, and RC. Specify the TE type by `--TEtype LINE --TEtype SINE`
+- `TEtype` : Which TE super families to be extracted from the TE deletion file (default: Alu, L1, and SVA). Specify the TE type by `--TEtype Alu --TEtype L1`
 - `ins-ratio` : Proportion of insertion events (default: 0.4)  
 - `seed` : Random seed (default: None)  
 
@@ -124,6 +127,9 @@ Generate pTE position from Pangenome graph.
 - `CHR` : Chromosome used to simulate pTE  
 
 **Optional arguments:**  
+- `DELlen` : A minimum length of known TE deletions to be considered for simulating pTE deletions (default: 100 bp)
+- `nMIN` : A minimum number of TE deletions for each TE super family to be simulated (default: 0)
+- `nSV` : Number of background structural variants to simulate (default: 0)
 - `outprefix` : Output prefix for BED file (default: TEpan)
 - `nTE` : Number of pTE insertions (default: all TEs)
 - `minLen` : Minimum length of structural variants to consider (default: 250)  
