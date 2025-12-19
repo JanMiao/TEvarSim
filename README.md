@@ -107,7 +107,7 @@ Generate pTE position from known deletion sites and random TE insertion.
 Automatically generate pTE positions from RepeatMasker or UCSC repeat annotations.
 
 **Required arguments:**  
-- `knownINS` : Known TE insertion file (FASTA)  
+- `knownINS` : Known TE insertion file (The sequence ID should follow the naming format CHR-POS-ID, e.g., chr1-683234-AluSp#SINE/Alu)  
 - `knownDEL` : Known TE deletion file (from RepeatMasker `.out` or UCSC `.txt`)  
 - `CHR` : Chromosome used to simulate pTE  
 
