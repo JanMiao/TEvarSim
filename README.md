@@ -64,7 +64,7 @@ tevarsim Readsim --type long --genome Sim.fa --depth 10
 - `type` : short reads or long reads
 
 **6. The complete workflow** 
-- We offered the complete workflow for the short/long-read based tool benchmarking. Please see the floder `workflow`
+- We offered the complete workflow for the short/long-read based tool benchmarking. Please see the file `workflow.sh`
 
 ## Flowchart
 ![flowchart](https://github.com/JanMiao/TEvarSim/blob/main/chart.png)  
