@@ -9,5 +9,5 @@
 - repeatmasker annotation: https://www.repeatmasker.org/genomicDatasets/RMGenomicDatasets.html
 
 ### Human TE consensus sequences (human_TE.fa):
-human_TE.fa contains 11 human TE consensus sequence downloaded from Dfam (ALU and SVA) and 2 human TE consensus sequence (L1 and HERVK)
+human_TE.fa contains 11 human TE consensus sequences (ALU and SVA) downloaded from Dfam and 2 human TE consensus sequence (L1 and HERVK) from MELT.
   
