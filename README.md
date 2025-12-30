@@ -35,7 +35,7 @@ tevarsim TEreal --knownINS MEI.fa --knownDEL rmsk.txt --CHR 21 --nTE 10
 
 **2. Simulate 10 pTE from known TE deletions and random TE insertions**
 ```bash
-tevarsim TErandom --consensus TEconsensus.fa --knownDEL rmsk.txt --CHR chr21 --nTE 10
+tevarsim TErandom --consensus human_TE.fa --knownDEL rmsk.txt --CHR chr21 --nTE 10
 ```
 - `TEconsensus.fa` is human TE consensus sequences from Dfam
 
