@@ -28,28 +28,28 @@ Example data can be found in the **testData** directory
 
 **1. Simulate 10 pTE from known TE insertions and deletions**
 ```bash
-tevarsim TEreal --knownINS MEI.fa --knownDEL rmsk.txt --CHR 21 --nTE 10
+tevarsim TEreal --knownINS MEI.fa --knownDEL rmsk.txt --CHR 21 --nTE 6
 ```
 - `MEI.fa` is known pTE insertion, from paper [Logsdon, G.A. et al. Nature, 2025](https://www.nature.com/articles/s41586-025-09140-6)  
 - `rmsk.txt` is known repeats annotation from UCSC hgTables.
 
 **2. Simulate 10 pTE from known TE deletions and random TE insertions**
 ```bash
-tevarsim TErandom --consensus human_TE.fa --knownDEL rmsk.txt --CHR chr21 --nTE 10
+tevarsim TErandom --consensus human_TE.fa --knownDEL rmsk.txt --CHR chr21 --nTE 6
 ```
 - `TEconsensus.fa` is human TE consensus sequences from Dfam
 
 **3. Simulate 10 pTE from pangenome graph**
 ```bash
-tevarsim TEpan --gfa hprc-v1.0-minigraph-grch38.gfa.gz –lib Homo_sapiens_DFAM.fa  --CHR chr21 --nTE 10
+tevarsim TEpan --gfa hprc-v1.0-minigraph-grch38.gfa.gz –lib Homo_sapiens_DFAM.fa  --CHR chr21 --nTE 6
 ```
 - `hprc-v1.0-minigraph-grch38.gfa.gz` is downloaded from [HPRC](https://data.humanpangenome.org/alignments)
 
 **4. Simulate 10 genomes with 10 pTE**  
 ```bash
-tevarsim Simulate --ref chr21_tiny.fa --bed real.bed --num 10 --pool MEI.fa
+tevarsim Simulate --ref chr21_tiny.fa --bed TEreal.bed --num 10 --pool MEI.fa
 # if you want to generate sequence vairiations of the same TE between genomes, run below commonds
-tevarsim Simulate --ref chr21_tiny.fa --bed real.bed --num 10 --pool MEI.fa --diverse --diverse_config diverse.config
+tevarsim Simulate --ref chr21_tiny.fa --bed TEreal.bed --num 10 --pool MEI.fa --diverse --diverse_config diverse.config
 ```
 - `chr21_tiny.fa` is the reference sequence
 - `real.bed` is the position of pTE positions that generated from `tevarsim TEreal`
